@@ -1,0 +1,30 @@
+.news {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+.news__item-link {
+  color: red;
+}
+.news,
+.news__item {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 10px;
+}
+.news li.news__item + li.news__item {
+  border-top: 1px solid #ccc;
+}
+.news li.news__item:nth-child(2n) {
+  background: #eee;
+}
+.news li.news__item:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.news,
+.news__item,
+.news__item-title {
+  margin: 0 0 0.25em;
+  font-size: 20px;
+}
