@@ -1,0 +1,26 @@
+.first-div {
+  display: block;
+  background-color: aquamarine;
+  height: 100px;
+  width: 100px;
+}
+.second-div {
+  display: inline;
+  background-color: burlywood;
+  height: 100px;
+  width: 100px;
+}
+.third-div {
+  display: inline-block;
+  background-color: #adc8c9;
+  height: 100px;
+  width: 100px;
+}
+.first-image {
+  height: 100px;
+  width: 100px;
+}
+.second-image {
+  height: 200px;
+  width: 200px;
+}
