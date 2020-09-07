@@ -1,0 +1,15 @@
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.generic {
+  width: 100%;
+  max-width: 840px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item {
+  border: 5px solid black;
+}
