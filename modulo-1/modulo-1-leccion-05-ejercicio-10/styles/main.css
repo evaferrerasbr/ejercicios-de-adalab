@@ -46,6 +46,8 @@ body {
   display: none;
 }
 
-.tooltip-html:hover {
+.tooltip-html:hover,
+.tooltip-css:hover,
+.tooltip-javascript:hover {
   display: block;
 }
