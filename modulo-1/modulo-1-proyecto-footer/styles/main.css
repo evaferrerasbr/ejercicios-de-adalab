@@ -1,0 +1,60 @@
+@font-face {
+  font-family: OpenSans;
+  src: local(OpenSans), url(/path/to/OpenSans.woff2) format("woff2"),
+    url(/path/to/OpenSans.woff) format("woff"),
+    url(/path/to/OpenSans.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  border: 1px solid #b8b8b9;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 25px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.footer-copyright {
+  font-family: OpenSans;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b8b8b9;
+}
+
+.footer-menu {
+  font-family: OpenSans;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #54585a;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer-image {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.footer-logo {
+  width: 100%;
+  display: block;
+}
