@@ -6,30 +6,46 @@ body {
   line-height: 1.5;
 }
 
+.link:hover {
+  cursor: help;
+}
+
+.tooltip {
+  width: 400px;
+  height: 100px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  margin: 10px auto;
+}
+
+.start-position {
+  position: relative;
+}
+
 .tooltip-html {
-  width: 300px;
-  height: 50px;
-  background-color: #ddd6d6;
-  border-radius: 5px;
-  padding-left: 10px;
+  position: absolute;
+  top: -6px;
+  right: -70px;
 }
 
 .tooltip-css {
-  width: 300px;
-  height: 85px;
-  background-color: #ddd6d6;
-  border-radius: 5px;
-  padding-left: 10px;
+  position: absolute;
+  top: 17px;
+  right: -70px;
 }
 
 .tooltip-javascript {
-  width: 300px;
-  height: 100px;
-  background-color: #ddd6d6;
-  border-radius: 5px;
-  padding-left: 10px;
+  position: absolute;
+  top: 44px;
+  right: -95px;
 }
 
-. .link:hover {
-  cursor: help;
+.tooltip-html,
+.tooltip-css,
+.tooltip-javascript {
+  display: none;
+}
+
+.tooltip-html:hover {
+  display: block;
 }
