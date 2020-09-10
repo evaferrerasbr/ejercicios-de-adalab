@@ -1,70 +1,80 @@
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Rubik', sans-serif;  */
+/* reset styles */
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+} /*esto es para quitarle a los enlaces las propiedades*/
 
 .footer {
   border: 1px solid #b8b8b9;
   width: 100%;
-  max-width: 320px;
   margin: 0 auto;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 35px;
+  padding: 30px auto 45px auto;
 }
 
 .footer-copyright {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.43;
-  letter-spacing: normal;
-  text-align: center;
   color: #b8b8b9;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .footer-menu {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 25px;
-  letter-spacing: normal;
   color: #54585a;
   opacity: 0.75;
-  text-transform: uppercase;
+  text-transform: uppercase; /*para convertir en mayúsculas*/
+  margin-bottom: 30px;
 }
 
-ul {
+.footer-list {
   list-style: none;
   padding: 0;
-}
+} /*para quitar los puntos y el padding de los <li>*/
 
 .footer-image {
   margin: 0 auto;
-  padding-top: 5px;
   max-width: 100px;
-}
+} /*contenedor para que la imagen se ajuste al ancho*/
 
 .footer-logo {
   width: 100%;
   display: block;
 }
 
+/* mediaquerys para tablet */
+
 @media all and (min-width: 768px) {
   .footer {
     display: flex;
     position: relative;
     justify-content: space-between;
-    max-width: 1200px;
+    padding: 30px 45px 60px 45px;
   }
+
   .footer-menu {
-    order: 1;
+    order: 1; /*para poner el bloque de menú a la dcha*/
+    text-align: right;
+    line-height: 2.14;
   }
+
   .footer-image {
-    position: absolute;
+    position: absolute; /*para sacar el logo del flujo*/
     top: 45%;
   }
+}
+
+/* mediaquerys para desktop */
+.footer {
+  padding: 30px 138px 60px 138px;
 }
