@@ -17,6 +17,15 @@ body {
   border-radius: 3px;
 }
 
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  cursor: help;
+}
+
 .link:hover .tooltip {
   cursor: help;
   display: block;
