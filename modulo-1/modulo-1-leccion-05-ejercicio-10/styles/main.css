@@ -6,48 +6,18 @@ body {
   line-height: 1.5;
 }
 
-.link:hover {
-  cursor: help;
-}
-
 .tooltip {
-  width: 400px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border: 2px solid black;
   padding: 10px 20px;
   margin: 10px auto;
-}
-
-.start-position {
-  position: relative;
-}
-
-.tooltip-html {
-  position: absolute;
-  top: -6px;
-  right: -70px;
-}
-
-.tooltip-css {
-  position: absolute;
-  top: 17px;
-  right: -70px;
-}
-
-.tooltip-javascript {
-  position: absolute;
-  top: 44px;
-  right: -95px;
-}
-
-.tooltip-html,
-.tooltip-css,
-.tooltip-javascript {
+  overflow: auto;
   display: none;
+  border-radius: 3px;
 }
 
-.tooltip-html:hover,
-.tooltip-css:hover,
-.tooltip-javascript:hover {
+.link:hover .tooltip {
+  cursor: help;
   display: block;
 }
