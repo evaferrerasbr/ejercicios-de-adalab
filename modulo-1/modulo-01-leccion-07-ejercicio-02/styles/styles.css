@@ -1,0 +1,17 @@
+.test,
+.test-2 {
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.test-image {
+  width: 100%;
+  display: block;
+}
+
+.test-2 {
+  background-image: url(../images/foto-prueba.jpg);
+  background-size: 400px;
+}
