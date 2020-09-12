@@ -3,32 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ejercicio 7</title>
-    <link rel="stylesheet" href="/.styles/main.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
 
   <body>
     <div class="container">
-      <main class="item central-section">
-        <h1>Centro de fisioterapia Guzmán Fernández</h1>
-        <p>Fisioterapia general</p>
+      <div class="left-wraper">
+      <main class="central-section">
+        <h1 class="main-title">Centro de fisioterapia Guzmán Fernández</h1>
+        <p class="text">Fisioterapia general</p>
         <div class="buttons">
-          <button class="reserve">Reservar cita</button>
-          <button class="budget">Pedir presupuesto</button>
+          <button class="button reserve">Reservar cita</button>
+          <button class="button budget">Pedir presupuesto</button>
         </div>
       </main>
-      <aside class="item sidebar">
-        <img class="left-picture" src="/images/savethehumans.jpg" alt="Bear" />
+      <aside class="sidebar">
+        <div class="left-picture-container">
+          <img
+            class="left-picture"
+            src="/images/savethehumans.jpg"
+            alt="Bear"
+          />
+        </div>
+      </div>
       </aside>
-      <aside class="item rates">
+      <aside class="rates">
         <div class="rates-left">
-          <h2>24 valoraciones</h2>
-          <p>Ver comentarios -></p>
+          <h2 class="second-title">24 valoraciones</h2>
+          <p class="text">Ver comentarios -></p>
         </div>
         <div class="rates-right">
           <div class="box">
-            <p class="points">8,9</p>
+            <p class="text">8,9</p>
           </div>
-          <img class="star-image" src="/images/star.jpg" alt="Star" />
+          <div class="star-image-container">
+            <img class="star-image" src="/images/star.jpg" alt="Star" />
+          </div>
         </div>
       </aside>
     </div>
