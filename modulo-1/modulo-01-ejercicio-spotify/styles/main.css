@@ -1,0 +1,136 @@
+/**********fonts**********/
+@font-face {
+  font-family: Circular;
+  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff2")
+      format("woff2"),
+    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Circular;
+  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff2")
+      format("woff2"),
+    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff")
+      format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/**********reset styles**********/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Circular;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.container {
+  background-color: brown;
+}
+
+/**********header**********/
+
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.menu-list {
+  font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.item-list {
+  padding: 5px;
+}
+
+.logo {
+  width: 100px;
+  height: 30px;
+}
+
+.item-list {
+  color: white;
+  list-style: none;
+  display: inline-block;
+}
+
+/**********main**********/
+
+.hero {
+  background-color: #529cf1;
+  color: white;
+  height: 50vh;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  margin: auto;
+  text-transform: uppercase;
+  color: white;
+  background-color: #26b758;
+  border-style: none;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.benefits {
+  background-color: white;
+}
+
+.benefits-wraper {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefits-image-container {
+  width: 100px;
+  height: 100px;
+}
+
+.benefits-image {
+  width: 100%;
+}
+
+.benefits-item {
+  display: flex;
+}
+
+/**********footer**********/
+
+.footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.legal-list,
+.copyright-list {
+  list-style: none;
+  padding: 0;
+}
+
+.flag {
+  width: 20px;
+}
