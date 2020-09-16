@@ -1,0 +1,22 @@
+body {
+  font-family: $font-main;
+}
+
+.home__section--1 {
+  background-color: powderblue;
+  padding: 25px;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__section--2 {
+  background-color: palegoldenrod;
+  padding: 25px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
