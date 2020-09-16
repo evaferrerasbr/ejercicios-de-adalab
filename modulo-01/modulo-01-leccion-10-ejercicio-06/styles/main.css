@@ -1,0 +1,26 @@
+@import "_variables";
+@import "_demo";
+
+@mixin tablet() {
+  min-width: 768px;
+  font-size: $fontSize {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  min-width: 1024px;
+  font-size: $fontSize {
+    @content;
+  }
+}
+
+.title {
+  font-size: 16px;
+  @include tablet {
+    font-size: 18px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
+}
