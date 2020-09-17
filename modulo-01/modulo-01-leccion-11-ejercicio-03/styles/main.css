@@ -1,0 +1,23 @@
+.text {
+  font-family: arial, sans serif;
+  margin-left: 10px;
+}
+
+.formInput {
+  margin-left: 10px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  outline: none;
+}
+
+.formInputBlock {
+  display: block;
+  margin: 10px;
+}
+
+.submitButton {
+  display: block;
+  width: 150px;
+}
