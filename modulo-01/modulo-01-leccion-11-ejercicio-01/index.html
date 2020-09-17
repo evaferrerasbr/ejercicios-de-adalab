@@ -1,35 +1,101 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 1</title>
-    <link rel="stylesheet" href="./styles/main.css"/>
-  </head>
-  <body>
-    <form action="" method="post">
-      <label for="firstName">Nombre</label>
-      <input class="formInput" placeholder="Mabel" type="text" id="firstName" name="firstName"/>
-      <label for="lastName">Apellidos</label>
-      <input class="formInput" placeholder="Pines" type="text" id="lastName" name="lastName"/>
-      <label for="emailAdress">Email</label>
-      <input class="formInput" placeholder="mabelpines@gmail.com" type="email" id="emailAdress" name="emailAdress"/>
-      <label for="street">Dirección</label>
-      <input class="formInput" placeholder="Mystery Shack" type="text" id="street" name="street"/>
-      <label for="city">Ciudad</label>
-      <input class="formInput" placeholder="Gravity Falls" type="text" id="city" name="city"/>
-      <label for="state">Provincia</label>
-      <input class="formInput" placeholder="Oregon" type="text" id="state" name="state"/>
-      <label for="country">País</label>
-      <input class="formInput" placeholder="US" type="text" id="country" name="country"/>
-      <label for="idCard">DNI</label>
-      <input class="formInput" placeholder="00112233-Y" type="text" id="idCard" name="idCard"/>
-      <label for="telephone">Teléfono</label>
-      <input class="formInput" placeholder="+34 666555444" type="tel" id="telephone" name="telephone"/>
-      <label for="password">Contraseña</label>
-      <input class="formInput" type="password" id="password" name="password"/>
-      <label for="confirmPassword">Confirmar contraseña</label>
-      <input class="formInput" type="password" id="confirmPassword" name="confirmPassword"/>
-      <input class="formInput" type="submit" value="Enviar"/>
-  </body>
-</html>
+<form action="" method="post">
+  <label for="firstName">Nombre</label>
+  <input
+    class="formInput"
+    placeholder="Mabel"
+    type="text"
+    id="firstName"
+    name="firstName"
+    required
+  />
+  <label for="lastName">Apellidos</label>
+  <input
+    class="formInput"
+    placeholder="Pines"
+    type="text"
+    id="lastName"
+    name="lastName"
+  />
+  <label for="emailAdress">Email</label>
+  <input
+    class="formInput"
+    placeholder="mabelpines@gmail.com"
+    type="email"
+    id="emailAdress"
+    name="emailAdress"
+    required
+  />
+  <label for="street">Dirección</label>
+  <input
+    class="formInput"
+    placeholder="Mystery Shack"
+    type="text"
+    id="street"
+    name="street"
+    required
+  />
+  <label for="city">Ciudad</label>
+  <input
+    class="formInput"
+    placeholder="Gravity Falls"
+    type="text"
+    id="city"
+    name="city"
+    value="Gravity Falls"
+    required
+  />
+  <label for="state">Provincia</label>
+  <input
+    class="formInput"
+    placeholder="Oregon"
+    type="text"
+    id="state"
+    name="state"
+    value="Oregon"
+    required
+  />
+  <label for="country">País</label>
+  <input
+    class="formInput"
+    placeholder="US"
+    type="text"
+    id="country"
+    name="country"
+    required
+  />
+  <label for="idCard">DNI</label>
+  <input
+    class="formInput"
+    placeholder="00112233-Y"
+    type="text"
+    id="idCard"
+    name="idCard"
+    required
+  />
+  <label for="telephone">Teléfono</label>
+  <input
+    class="formInput"
+    placeholder="+34 666555444"
+    type="tel"
+    id="telephone"
+    name="telephone"
+    required
+  />
+  <label for="password">Contraseña</label>
+  <input
+    class="formInput"
+    type="password"
+    id="password"
+    name="password"
+    required
+  />
+  <label for="confirmPassword">Confirmar contraseña</label>
+  <input
+    class="formInput"
+    type="password"
+    id="confirmPassword"
+    name="confirmPassword"
+    required
+  />
+  <input class="formInput" type="submit" value="Enviar" />
+</form>
