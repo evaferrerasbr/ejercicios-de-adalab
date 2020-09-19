@@ -1,0 +1,99 @@
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Rubik', sans-serif;  */
+/* reset styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.asterisk {
+  color: #14d9c4;
+}
+
+.contact-text {
+  text-align: center;
+  margin: 15px;
+  line-height: 24px;
+}
+
+.contact-paragraph {
+  padding-bottom: 30px;
+}
+
+.contact-title {
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 500;
+  color: #099d8d;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.form-fieldset {
+  width: 100%;
+  border: 0;
+}
+
+.form-field {
+  margin: 15px;
+}
+
+.input-style {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  height: 45px;
+}
+
+.textarea-style {
+  height: 105px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 15px 60px 15px;
+}
+
+.form-button {
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  background-color: #099d8d;
+  color: white;
+  cursor: pointer;
+  height: 45px;
+  width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .contact-text,
+  .form-field,
+  .button-container {
+    margin-left: 163px;
+    margin-right: 163px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .contact-text,
+  .form-field {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+  .button-container {
+    margin-left: 700px;
+    margin-right: 300px;
+  }
+
+  .email-telephone-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

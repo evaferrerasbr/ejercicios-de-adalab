@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pruebas de formulario</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="" class="contact">
+      <div class="codeflix-wrapper">
+        <div class="contact-text">
+          <h1 class="contact-title">Contacto</h1>
+          <p class="contact-paragraph">
+            ¿Quieres estar al tanto de las próximas temporadas de nuestras
+            Adalabers? ¿Tienes alguna otra pregunta? Contáctanos y te haremos
+            todos los spoilers que nos pidas.
+          </p>
+          <small
+            >Todos los campos marcados con <span class="asterisk">*</span> son
+            obligatorios</small
+          >
+        </div>
+        <form action="" method="POST">
+          <fieldset class="form-fieldset">
+            <div class="form-field">
+              <!-- Esta clase la hemos creado por si necesitáis dar estilos a los items del formulario -->
+              <label for="name"
+                >Nombre completo <span class="asterisk">*</span></label
+              >
+              <input
+                class="input-style"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Nombre..."
+                required
+              />
+            </div>
+            <div class="email-telephone-wrapper">
+              <div class="form-field email-field">
+                <label for="email">Email <span class="asterisk">*</span></label>
+                <input
+                  class="input-style email-input"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="nombre.apellidos@mail.com"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="telephone">Teléfono </label>
+                <input
+                  class="input-style telephone-field"
+                  type="tel"
+                  name="telephone"
+                  id="telephone"
+                  placeholder="Ej: 123456789"
+                />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message"
+                >Mensaje <span class="asterisk">*</span></label
+              >
+              <textarea
+                class="input-style textarea-style"
+                name="message"
+                id="message"
+                placeholder="¿Qué necesitas?"
+                required
+              ></textarea>
+            </div>
+            <div class="button-container">
+              <input class="form-button" type="submmit" value="Enviar" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
