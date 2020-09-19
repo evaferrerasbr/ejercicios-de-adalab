@@ -1,10 +1,17 @@
+.form {
+  width: 100%;
+  margin-left: 30px;
+}
+
+fieldset {
+  border: 0;
+}
+
 .text {
   font-family: arial, sans serif;
-  margin-left: 10px;
 }
 
 .formInput {
-  margin-left: 10px;
   width: 200px;
   padding: 10px;
   border-radius: 5px;
@@ -12,12 +19,43 @@
   outline: none;
 }
 
-.formInputBlock {
-  display: block;
-  margin: 10px;
+.accept-terms {
+  font-family: arial, sans serif;
+  margin-bottom: 15px;
 }
 
+.formInputBlock {
+  display: block;
+  margin-top: 10px;
+}
+
+.text-container {
+  font-family: arial, sans serif;
+}
+
+.birthday-fieldset {
+  font-family: arial, sans serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.birthday-styles {
+  margin-top: 10px;
+}
+
+.sex-field {
+  font-family: arial, sans serif;
+  margin-bottom: 15px;
+}
+
+small {
+  font-family: arial, sans serif;
+}
+
+.resetButton,
 .submitButton {
   display: block;
   width: 150px;
+  margin-top: 15px;
 }
