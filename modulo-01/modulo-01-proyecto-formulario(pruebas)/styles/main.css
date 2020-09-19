@@ -1,7 +1,3 @@
-/* font-family: 'Open Sans', sans-serif;
-font-family: 'Rubik', sans-serif;  */
-/* reset styles */
-
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +30,6 @@ font-family: 'Rubik', sans-serif;  */
 }
 
 .form-fieldset {
-  width: 100%;
   border: 0;
 }
 
@@ -73,10 +68,14 @@ font-family: 'Rubik', sans-serif;  */
 
 @media all and (min-width: 768px) {
   .contact-text,
-  .form-field,
-  .button-container {
+  .form-field {
     margin-left: 163px;
     margin-right: 163px;
+  }
+
+  .button-container {
+    margin: 20px 163px 60px auto;
+    width: 278px;
   }
 }
 
@@ -87,13 +86,24 @@ font-family: 'Rubik', sans-serif;  */
     margin-right: 300px;
   }
 
-  .button-container {
-    margin-left: 700px;
-    margin-right: 300px;
-  }
-
   .email-telephone-wrapper {
     display: flex;
     justify-content: space-between;
+  }
+
+  .form-field-email {
+    margin-left: 300px;
+    margin-right: 45px;
+    flex-grow: 2;
+  }
+
+  .form-field-telephone {
+    margin-left: 0;
+    margin-right: 300px;
+  }
+
+  .button-container {
+    margin: 20px 300px 120px auto;
+    width: 350px;
   }
 }
