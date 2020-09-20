@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: palegoldenrod;
+  height: 20vh;
+}
+
+.menu {
+  background-color: cadetblue;
+  height: 60vh;
+}
+
+.content {
+  background-color: coral;
+  height: 60vh;
+}
+
+.footer {
+  background-color: palevioletred;
+  height: 20vh;
+}
