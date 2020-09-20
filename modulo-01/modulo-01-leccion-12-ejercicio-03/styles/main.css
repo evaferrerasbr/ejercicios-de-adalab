@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: palegoldenrod;
+}
+
+.menu {
+  background-color: cadetblue;
+}
+
+.content {
+  background-color: coral;
+}
+
+.footer {
+  background-color: palevioletred;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 20vh 60vh 20vh;
+}
+
+.header {
+  grid-column: 1 / span 12;
+}
+
+.menu {
+  grid-column: 1 / span 4;
+}
+
+.content {
+  grid-column: 5 / span 8;
+}
+
+.footer {
+  grid-column: 1 / span 12;
+}
