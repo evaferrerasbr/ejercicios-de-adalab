@@ -1,29 +1,28 @@
 body {
-  background: #14d9c4;
   font-family: arial, sans-serif;
+  background-color: turquoise;
   margin: 0;
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-}
-
-.popup {
-  background: palevioletred;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 100px;
-  position: absolute;
-  bottom: 1px;
-  transition: bottom ease 3s;
+  padding-top: 40vh;
 }
 
-.main:hover .popup {
-  bottom: 50vh;
+@keyframes intro-text {
+  from {
+    padding-top: 40vh;
+  }
+  to {
+    padding-top: 0;
+  }
+}
+
+.title {
+  animation-name: intro-text;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
 }
