@@ -1,0 +1,11 @@
+body {
+  background-color: plum;
+  padding: 30px;
+}
+
+.inputStyles {
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
+}
