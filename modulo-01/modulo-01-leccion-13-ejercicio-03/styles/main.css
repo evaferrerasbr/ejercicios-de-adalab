@@ -1,0 +1,29 @@
+body {
+  background: #14d9c4;
+  font-family: arial, sans-serif;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  transition: bottom 3s ease;
+}
+
+.popup {
+  background: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  bottom: 1px;
+}
+
+.main:hover {
+  bottom: 50vh;
+}
