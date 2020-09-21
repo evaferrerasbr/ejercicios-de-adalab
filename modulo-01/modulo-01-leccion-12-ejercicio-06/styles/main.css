@@ -1,6 +1,10 @@
+body {
+  margin: 0;
+}
+
 .item {
   background-color: palevioletred;
-  margin: 5px;
-  height: 50px;
+  border: solid 1px white;
+  height: 30px;
   color: white;
 }
