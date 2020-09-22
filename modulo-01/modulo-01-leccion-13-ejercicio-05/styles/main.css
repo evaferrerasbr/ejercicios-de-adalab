@@ -1,5 +1,5 @@
 body {
-  background-color: plum;
+  background-color: paleturquoise;
   padding: 30px;
 }
 
@@ -9,3 +9,30 @@ body {
   padding: 10px;
   margin: 5px;
 }
+
+.emailAdress::placeholder {
+  position: relative;
+  bottom: -30px;
+}
+
+/* .emailAdress:hover .emailAdress::placeholder {
+  animation-name: placeholder;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframe placeholder {
+  from {
+    color: grey;
+    font-size: 16px;
+    transform: translate(0, 0);
+  }
+  to {
+    color: black;
+    font-size: 10px;
+    transform: translate(0, -30px);
+  }
+} */
