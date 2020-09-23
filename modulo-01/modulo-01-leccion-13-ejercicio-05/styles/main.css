@@ -10,10 +10,22 @@ body {
   margin: 5px;
 }
 
-.emailAdress::placeholder {
+.labelEmail {
+  display: none;
+}
+
+.emailAddress:focus .emailAddress::placeholder {
+  display: none;
+}
+
+.emailAddress:focus .labelEmail {
+  display: inline-block;
+}
+
+/* .emailAdress::placeholder {
   position: relative;
   bottom: -30px;
-}
+} */
 
 /* .emailAdress:hover .emailAdress::placeholder {
   animation-name: placeholder;
