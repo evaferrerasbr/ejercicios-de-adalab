@@ -1,4 +1,4 @@
 "use strict";
 
-let myAdress = "Calle Gutierre de Cetina";
-myAdress = "Calle falsa 1234";
+const myAdress = "Calle Gutierre de Cetina";
+const friendAdress = "Calle falsa 1234";
