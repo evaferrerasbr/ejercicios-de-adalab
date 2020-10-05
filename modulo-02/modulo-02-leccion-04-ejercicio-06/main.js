@@ -10,4 +10,4 @@ function getEl(selector) {
   return element;
 }
 
-const btnEl = getEl(".buton--2");
+const btnEl = getEl(".bton--2");
