@@ -1,22 +1,11 @@
-* {
-  box-sizing: border-box;
-}
-
 .container {
+  box-sizing: border-box;
   background-color: palevioletred;
   margin: 0 auto;
   height: 200px;
   width: 200px;
-  padding: 50px;
-  border: 10px solid black;
+  border: 15px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.content {
-  background-color: powderblue;
-  height: 100px;
-  width: 100px;
-  }
 }
