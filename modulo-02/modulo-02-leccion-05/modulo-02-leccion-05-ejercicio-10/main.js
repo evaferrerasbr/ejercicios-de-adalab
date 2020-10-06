@@ -14,3 +14,10 @@ function addListEl() {
 }
 
 button.addEventListener("click", addListEl);
+
+function selectMovie(event) {
+  const selectedMovie = event.target.innerHTML;
+  console.log(selectedMovie);
+}
+
+list.addEventListener("click", selectMovie);
