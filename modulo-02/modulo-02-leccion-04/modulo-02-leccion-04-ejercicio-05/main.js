@@ -4,5 +4,5 @@ function getEl(selector) {
   return document.querySelector(selector);
 }
 
-const btnEl = getEl(".button--3");
+const btnEl = getEl(".button--5");
 console.log(btnEl);

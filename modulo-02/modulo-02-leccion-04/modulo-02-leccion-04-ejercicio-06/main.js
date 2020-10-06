@@ -2,7 +2,7 @@
 
 function getEl(selector) {
   const element = document.querySelector(selector);
-  if (element === null) {
+  if (!element) {
     console.log(
       `No existe ningún elemento con clase, id o tag llamado ${selector}`
     );
@@ -10,4 +10,4 @@ function getEl(selector) {
   return element;
 }
 
-const btnEl = getEl(".bton--2");
+const btnEl = getEl(".buton--2");
