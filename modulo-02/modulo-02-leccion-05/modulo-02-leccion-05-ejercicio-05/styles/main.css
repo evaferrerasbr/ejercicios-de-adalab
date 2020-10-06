@@ -1,0 +1,11 @@
+.container {
+  background-color: paleturquoise;
+}
+
+.container--r {
+  background-color: coral;
+}
+
+.container--p {
+  background-color: purple;
+}
