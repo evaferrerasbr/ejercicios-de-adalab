@@ -22,6 +22,6 @@ pearBasket.removePear = function () {
 };
 
 pearBasket.reset = function () {
-  pearBasket.current = 4;
+  pearBasket.current = pearBasket.initial;
   console.log(pearBasket.current);
 };
