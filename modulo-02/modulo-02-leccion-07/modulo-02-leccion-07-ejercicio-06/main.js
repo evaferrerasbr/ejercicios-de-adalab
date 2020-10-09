@@ -7,11 +7,13 @@ const submitButton = document.querySelector(".submitButton");
 const paragraph = document.querySelector(".paragraph");
 
 
-function saveFavMovie(event) {
-  const movie = event.currentTarget.value;
-  console.log(movie);
+function showFavMovie() {
+  moviesArray[0] = favMovie1.value;
+  moviesArray[1] = favMovie2.value;
+  console.log(moviesArray);
+  for (const movie of moviesArray) {
+    console.log(`¡A mí también me encantó ${movie}! Tenemos mucho en común, humana.`);
+  }
 }
 
-favMovie1.addEventListener("blur", saveFavMovie);
-favMovie2.addEventListener("blur", saveFavMovie);
-// submitButton.addEventListener("click", showFavMovie);
+submitButton.addEventListener("click", showFavMovie);
