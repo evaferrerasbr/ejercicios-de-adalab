@@ -30,11 +30,8 @@ const adalabers = [
 
 function countAdalabers(array) {
   const totalAdalabers = array.length;
-  console.log(totalAdalabers);
   return totalAdalabers;
 }
-
-countAdalabers(adalabers);
 
 function average(array) {
 let total = 0;
@@ -42,32 +39,32 @@ for (let i = 0; i < array.length; i++) {
   total = total + array[i].age;
 }
 let av = total / array.length;
-console.log(av);
 return av;
 }
 
-average(adalabers);
-
 function theYoungest(array) {
   let minAge = array[0].age;
+  let youngest = undefined;
   for (let i = 0; i < array.length; i++) {
     if (array[i].age < minAge) {
       minAge = array[i].age;
-      console.log(`La adalaber más joven es ${array[i].name}`);
+      youngest = `La adalaber más joven es ${array[i].name}`;
     }
   }
+  return youngest;
 }
-
-theYoungest(adalabers);
 
 function countDesigners(array) {
   let total = 0;
   for (let i = 0; i < array.length; i++) {
     if (array[i].job === "Diseñadora") {
       total = total + 1;
-      console.log(`Hay ${total} adalabers diseñadoras`);
     }
   } 
+  return total;
 }
 
+countAdalabers(adalabers);
+average(adalabers);
+theYoungest(adalabers);
 countDesigners(adalabers);
