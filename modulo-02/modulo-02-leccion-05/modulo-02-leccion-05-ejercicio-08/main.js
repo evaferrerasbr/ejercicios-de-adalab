@@ -6,6 +6,7 @@ const button3 = document.querySelector(".button--3");
 
 function buttonClick(event) {
   const selectedButton = event.currentTarget;
+  console.log(selectedButton);
   selectedButton.classList.toggle("button--change");
 }
 

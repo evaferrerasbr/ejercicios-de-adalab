@@ -21,3 +21,6 @@ function selectMovie(event) {
 }
 
 list.addEventListener("click", selectMovie);
+
+
+
