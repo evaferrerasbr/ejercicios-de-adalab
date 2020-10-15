@@ -8,7 +8,8 @@ function selectLostNumbers(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 0) {
       evenLostNumbers.push(arr[i]);
-    } else if (arr[i] % 3 === 0) {
+    }
+    if (arr[i] % 3 === 0) {
       multipleLostNumbers.push(arr[i]);
     }
   }

@@ -13,11 +13,15 @@ const tasks = [
 const list = document.querySelector(".js-list");
 
 function createList(arr) {
+  let listEl = "";
   for (let i = 0; i < arr.length; i++) {
-    let listEl = `<li>${tasks[i].name}</li>`;
+    listEl = `<li>${arr[i].name}</li>`;
+    console.log(listEl);
     list.innerHTML = list.innerHTML + listEl;
     if (arr[i].completed) {
       console.log("Tarea completada");
+      console.log(listEl);
+      listEl.classList.add(".crossout");
     }
   }
 }
