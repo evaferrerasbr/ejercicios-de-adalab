@@ -14,15 +14,20 @@ const list = document.querySelector(".js-list");
 
 function createList(arr) {
   let listEl = "";
+  let className = "";
+  let checked = "";
   for (let i = 0; i < arr.length; i++) {
-    listEl = `<li>${arr[i].name}</li>`;
-    console.log(listEl);
-    list.innerHTML = list.innerHTML + listEl;
-    if (arr[i].completed) {
-      console.log("Tarea completada");
-      console.log(listEl);
-      listEl.classList.add(".crossout");
+    if (arr[i].completed === true) {
+      className = "crossout";
+      checked = "checked";
+    } else {
+      className = "";
+      checked = "";
     }
+    listEl = `<li class="${className}">${arr[i].name}</li>`;
+    let checkBox = `<input type="checkbox" ${checked}/>`;
+    console.log(listEl);
+    list.innerHTML = list.innerHTML + listEl + checkBox;
   }
 }
 
