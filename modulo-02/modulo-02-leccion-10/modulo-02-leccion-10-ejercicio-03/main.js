@@ -1,8 +1,10 @@
 "use strict";
-const inputSearch = document.querySelector(".js-inputSearch");
-console.log(inputSearch);
+
+const btn = document.querySelector(".js-btn");
+
+let username = document.querySelector(".js-inputSearch").value;
+
 function getUserInfo() {
-  let username = inputSearch.value;
   fetch(`https://api.github.com/users/${username}`)
     .then((response) => response.json())
     .then((data) => {
@@ -15,5 +17,5 @@ function getUserInfo() {
       repositories.innerHTML = data.public_repos;
     });
 }
-const btn = document.querySelector(".js-btn");
+
 btn.addEventListener("click", getUserInfo);
