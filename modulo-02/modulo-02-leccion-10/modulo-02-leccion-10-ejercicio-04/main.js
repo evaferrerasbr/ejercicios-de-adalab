@@ -2,24 +2,22 @@
 
 const btn = document.querySelector(".js-btn");
 const list = document.querySelector(".js-list");
-let orgname = document.querySelector(".js-input").value;
 
-function getRepo() {
+function getRepo(event) {
+  event.preventDefault();
+  let orgname = document.querySelector(".js-input").value;
   fetch(`https://api.github.com/orgs/${orgname}`)
     .then((orgResponse) => orgResponse.json())
     .then((orgData) => {
       const data = orgData.repos_url;
-      return fetch(
-        `https://dog.ceo/https://api.github.com/orgs/${orgname}` + data[0]
-      );
+      return fetch(data);
     })
     .then((repoResponse) => repoResponse.json())
     .then((repoData) => {
-      const repo = repoData.name;
       let ulContent = "";
-      for (const repoName of repo) {
-        const repoContent = `<li>${repoName}</li>`;
-        ulContent += repoContent;
+      for (let i = 0; i < repoData.length; i++) {
+        let liContent = `<li>${repoData[i].name}</li>`;
+        ulContent += liContent;
       }
       list.innerHTML = ulContent;
     });
