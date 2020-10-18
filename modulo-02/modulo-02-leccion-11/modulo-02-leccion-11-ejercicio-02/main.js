@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-const btn = document.querySelector(".js-button");
-const list = document.querySelector(".js-list");
+const btn = document.querySelector('.js-button');
+const list = document.querySelector('.js-list');
 
 function getInfo() {
-  list.innerHTML = "";
-  let search = document.querySelector(".js-input").value;
+  list.innerHTML = '';
+  let search = document.querySelector('.js-input').value;
   for (let i = 1; i <= 9; i++) {
     fetch(`https://swapi.dev/api/people/?page=${i}`)
       .then((response) => response.json())
@@ -23,4 +23,4 @@ function getInfo() {
   }
 }
 
-btn.addEventListener("click", getInfo);
+btn.addEventListener('click', getInfo);

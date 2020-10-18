@@ -1,23 +1,23 @@
-"use strict";
+'use strict';
 
-const form = document.querySelector(".js-form");
+const form = document.querySelector('.js-form');
 
 const user = {
-  name: "",
-  surname: "",
+  name: '',
+  surname: '',
 };
 
 function saveInfo(event) {
   user[event.target.id] = event.target.value;
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem('user', JSON.stringify(user));
 }
 
-form.addEventListener("keyup", saveInfo);
+form.addEventListener('keyup', saveInfo);
 
 function useInfo() {
-  let inputName = document.querySelector(".js-name");
-  let inputSurname = document.querySelector(".js-surname");
-  const userInfo = JSON.parse(localStorage.getItem("user"));
+  let inputName = document.querySelector('.js-name');
+  let inputSurname = document.querySelector('.js-surname');
+  const userInfo = JSON.parse(localStorage.getItem('user'));
   inputName.value = userInfo.name;
   inputSurname.value = userInfo.surname;
 }
