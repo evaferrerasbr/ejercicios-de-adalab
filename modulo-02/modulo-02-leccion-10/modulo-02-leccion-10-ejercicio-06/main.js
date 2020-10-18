@@ -6,6 +6,7 @@ function getRandomDog() {
     .then((breedsData) => {
       const breedsLegth = breedsData.message;
       const randomMax = breedsLegth.length;
+      console.log(randomMax);
       return fetch(`https://rand.fun/integer?max=${randomMax}`);
     })
     .then((randomResponse) => randomResponse.json())
