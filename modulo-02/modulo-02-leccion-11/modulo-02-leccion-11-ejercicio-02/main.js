@@ -12,7 +12,7 @@ function getInfo() {
       .then((data) => {
         let results = data.results;
         for (let j = 0; j < results.length; j++) {
-          let characterName = results[j].name.toLowerCase();
+          let characterName = results[j].name;
           let characterGender = results[j].gender;
           if (characterName.includes(search)) {
             let liElement = `<li>Name: <span class="ligthText">${characterName}</span> Gender: <span class="ligthText">${characterGender}</span></li>`;
