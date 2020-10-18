@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+.input {
+  width: 270px;
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.button {
+  height: 30px;
+  border-radius: 3px;
+  background-color: powderblue;
+  border: none;
+  color: white;
+}
+
+.ligthText {
+  color: gray;
+}
