@@ -3,7 +3,10 @@
 const body = document.querySelector('.body');
 const form = document.querySelector('.js-form');
 
-let themes = {};
+let themes = {
+  light: false,
+  dark: false,
+};
 
 function changeTheme() {
   if (themes.light === true) {
