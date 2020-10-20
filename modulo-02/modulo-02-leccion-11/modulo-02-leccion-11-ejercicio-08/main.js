@@ -36,12 +36,14 @@ function searchInfo() {
         characterInfo.push(characterObject);
       }
       localStorage.setItem('search', JSON.stringify(characterInfo));
+      //¿Cómo hacer que no se me guarde más de una vez en el localStorage?
     });
 }
 
 function getLocalStorage() {
   const info = JSON.parse(localStorage.getItem('search'));
-  let liElement = `<li>Name: <span class="ligthText">${info.name}</span> Gender: <span class="ligthText">${info.gender}</span></li>`;
+  const index = characterInfo.indexOf(search);
+  let liElement = `<li>Name: <span class="ligthText">${info[index].name}</span> Gender: <span class="ligthText">${info[index].gender}</span></li>`;
   list.innerHTML += liElement;
 }
 
