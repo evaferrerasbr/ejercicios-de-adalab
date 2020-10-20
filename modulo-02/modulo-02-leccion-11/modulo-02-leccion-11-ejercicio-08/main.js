@@ -3,7 +3,7 @@
 const btn = document.querySelector('.js-button');
 const list = document.querySelector('.js-list');
 
-const characterSearch = [];
+const characterInfo = [];
 
 function getInfo() {
   list.innerHTML = '';
@@ -13,16 +13,20 @@ function getInfo() {
     .then((data) => {
       let results = data.results;
       for (let j = 0; j < results.length; j++) {
-        characterSearch.push(results[j]);
         let liElement = `<li>Name: <span class="ligthText">${results[j].name}</span> Gender: <span class="ligthText">${results[j].gender}</span></li>`;
         list.innerHTML += liElement;
+        const characterObject = {
+          name: results[j].name,
+          gender: results[j].gender,
+        };
+        characterInfo.push(characterObject);
+        localStorage.setItem('search', JSON.stringify(characterInfo));
       }
     });
-  const savedSearch = localStorage.setItem(
-    'search',
-    JSON.stringify(characterSearch)
-  );
 }
+
+localStorage.getItem('search');
+console.log(localStorage.getItem('search'));
 
 btn.addEventListener('click', getInfo);
 
