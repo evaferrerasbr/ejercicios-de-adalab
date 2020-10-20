@@ -2,11 +2,25 @@
 
 const btn = document.querySelector('.js-button');
 const list = document.querySelector('.js-list');
-
 const characterInfo = [];
 
 function getInfo() {
+  //esta función limpia la lista, coge el valor del input y si no es una búsqueda vacía da dos opciones: 1. buscar en el local storage si no está vacío y 2. hacer la petición al servidor si está vacío.
   list.innerHTML = '';
+  let search = document.querySelector('.js-input').value;
+  if (search !== '') {
+    if (localStorage !== null) {
+      getLocalStorage();
+      console.log('entro en el localStorage');
+      //¿Cómo puedo hacer para que, si mi búsqueda no coincide con ningún término guardado en localStorage, me vaya al fetch?
+    } else {
+      console.log('voy al fetch');
+      searchInfo();
+    }
+  }
+}
+
+function searchInfo() {
   let search = document.querySelector('.js-input').value;
   fetch(`https://swapi.dev/api/people/?search=${search}`)
     .then((response) => response.json())
@@ -20,22 +34,15 @@ function getInfo() {
           gender: results[j].gender,
         };
         characterInfo.push(characterObject);
-        localStorage.setItem('search', JSON.stringify(characterInfo));
       }
+      localStorage.setItem('search', JSON.stringify(characterInfo));
     });
 }
 
-localStorage.getItem('search');
-console.log(localStorage.getItem('search'));
+function getLocalStorage() {
+  const info = JSON.parse(localStorage.getItem('search'));
+  let liElement = `<li>Name: <span class="ligthText">${info.name}</span> Gender: <span class="ligthText">${info.gender}</span></li>`;
+  list.innerHTML += liElement;
+}
 
 btn.addEventListener('click', getInfo);
-
-//function getFavoritesLocalStorage() {
-// el array de favoritos tendrá lo que tenga el localStorage
-//let favorites = JSON.parse(localStorage.getItem('favs'));
-//if (favorites !== null) {
-//return favorites;
-//} else {
-//  return (favorites = []);
-//}
-//}
