@@ -12,7 +12,6 @@ function getInfo() {
     if (localStorage !== null) {
       getLocalStorage();
       console.log('entro en el localStorage');
-      //¿Cómo puedo hacer para que, si mi búsqueda no coincide con ningún término guardado en localStorage, me vaya al fetch?
     } else {
       console.log('voy al fetch');
       searchInfo();
@@ -41,10 +40,16 @@ function searchInfo() {
 }
 
 function getLocalStorage() {
+  //Al final de esta función llamo a searchInfo() para que, si no ha encontrado un término que encaje con la búsqueda, busque en el servidor.
   const info = JSON.parse(localStorage.getItem('search'));
-  const index = characterInfo.indexOf(search);
-  let liElement = `<li>Name: <span class="ligthText">${info[index].name}</span> Gender: <span class="ligthText">${info[index].gender}</span></li>`;
-  list.innerHTML += liElement;
+  for (let i = 0; i < characterInfo.length; i++) {
+    if (characterInfo.include(search)) {
+      let liElement = `<li>Name: <span class="ligthText">${info[i].name}</span> Gender: <span class="ligthText">${info[i].gender}</span></li>`;
+      list.innerHTML += liElement;
+    } else {
+      searchInfo();
+    }
+  }
 }
 
 btn.addEventListener('click', getInfo);
