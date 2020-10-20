@@ -10,11 +10,10 @@ const users = [
 
 const welcome = users.map((user) => {
   if (user.isPremium) {
-    user.name = `¡Bienvenida, ${user.name}, gracias por confiar en nosotros.`;
+    return `¡Bienvenida, ${user.name}, gracias por confiar en nosotros.`;
   } else {
-    user.name = `¡Bienvenida, ${user.name}.`;
+    return `¡Bienvenida, ${user.name}.`;
   }
-  return user;
 });
 
 console.log(welcome);
