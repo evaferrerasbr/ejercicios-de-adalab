@@ -3,35 +3,25 @@
 const btn = document.querySelector('.js-button');
 const list = document.querySelector('.js-list');
 const characterInfo = [];
-let savedSearch = '';
-let search = document.querySelector('.js-input').value;
+let savedSearch = [];
+let search = '';
+let results = undefined;
 
-function getInfo() {
+//esta función es la que se activa cuando la usuaria hace click en Buscar tras meter el término de búsqueda; me llama a la función getLocalStorage() y, en caso de que su return sea false, me llama a la función getInfo();
+function handler() {
   list.innerHTML = '';
-  if (search !== '') {
-    fetch(`https://swapi.dev/api/people/?search=${search}`)
-      .then((response) => response.json())
-      .then((data) => {
-        let results = data.results;
-        for (let j = 0; j < results.length; j++) {
-          let liElement = `<li>Name: <span class="ligthText">${results[j].name}</span> Gender: <span class="ligthText">${results[j].gender}</span></li>`;
-          list.innerHTML += liElement;
-          const characterObject = {
-            name: results[j].name,
-            gender: results[j].gender,
-          };
-          characterInfo.push(characterObject);
-        }
-        localStorage.setItem('search', JSON.stringify(characterInfo));
-      });
+  console.log('entro en handler');
+  const askLocalStorage = getLocalStorage();
+  if (!askLocalStorage) {
+    getInfo();
   }
 }
 
 function getLocalStorage() {
-  if (localStorage.getItem('search') !== null) {
-    console.log('entro en el localStorage');
-    savedSearch = JSON.parse(localStorage.getItem('search'));
-    console.log(savedSearch);
+  console.log('consulto el localStorage');
+  const stringInfo = localStorage.getItem('search');
+  savedSearch = JSON.parse(stringInfo);
+  if (savedSearch !== null) {
     getInfoFromLocal();
     return true;
   } else {
@@ -40,6 +30,8 @@ function getLocalStorage() {
 }
 
 function getInfoFromLocal() {
+  console.log('entro en getInfoFromLocal');
+  search = document.querySelector('.js-input').value;
   for (let i = 0; i < savedSearch.length; i++) {
     if (savedSearch.includes(search)) {
       console.log(savedSearch);
@@ -47,12 +39,35 @@ function getInfoFromLocal() {
   }
 }
 
-function handler() {
-  debugger;
-  const askLocalStorage = getLocalStorage();
-  if (!askLocalStorage) {
-    getInfo();
+function getInfo() {
+  console.log('entro en getInfo para hacer el fetch');
+  list.innerHTML = '';
+  search = document.querySelector('.js-input').value;
+  if (search !== '') {
+    console.log('entro en el if porque no estoy vacío');
+    fetch(`https://swapi.dev/api/people/?search=${search}`)
+      .then((response) => response.json())
+      .then((data) => {
+        results = data.results;
+        console.log('estoy al final de getInfo');
+        paintData();
+      });
   }
+}
+
+function paintData() {
+  console.log('entro en pintar');
+  for (let j = 0; j < results.length; j++) {
+    let liElement = `<li>Name: <span class="ligthText">${results[j].name}</span> Gender: <span class="ligthText">${results[j].gender}</span></li>`;
+    list.innerHTML += liElement;
+    const characterObject = {
+      name: results[j].name,
+      gender: results[j].gender,
+    };
+    characterInfo.push(characterObject);
+  }
+  const stringData = JSON.stringify(characterInfo);
+  localStorage.setItem('search', stringData);
 }
 
 btn.addEventListener('click', handler);
