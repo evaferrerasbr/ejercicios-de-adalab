@@ -7,40 +7,18 @@ let savedSearch = [];
 let search = '';
 let results = undefined;
 
-//esta función es la que se activa cuando la usuaria hace click en Buscar tras meter el término de búsqueda; me llama a la función getLocalStorage() y, en caso de que su return sea false, me llama a la función getInfo();
+//esta función es la que se activa cuando la usuaria hace click en Buscar tras meter el término de búsqueda; llama a la función getLocalStorage() y, en caso de que su return sea false, llama a la función getInfo();
 function handler() {
+  console.log('entro');
   list.innerHTML = '';
-  console.log('entro en handler');
   const askLocalStorage = getLocalStorage();
   if (!askLocalStorage) {
     getInfo();
   }
 }
 
-function getLocalStorage() {
-  console.log('consulto el localStorage');
-  const stringInfo = localStorage.getItem('search');
-  savedSearch = JSON.parse(stringInfo);
-  if (savedSearch !== null) {
-    getInfoFromLocal();
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function getInfoFromLocal() {
-  console.log('entro en getInfoFromLocal');
-  search = document.querySelector('.js-input').value;
-  for (let i = 0; i < savedSearch.length; i++) {
-    if (savedSearch.includes(search)) {
-      console.log(savedSearch);
-    }
-  }
-}
-
+//si es la primera vez que la usuaria visita la página, esta función hace una petición al servidor con la búsqueda de la usuaria (que guarda en la variable global search), guarda la información .results del json y llama a painData().
 function getInfo() {
-  console.log('entro en getInfo para hacer el fetch');
   list.innerHTML = '';
   search = document.querySelector('.js-input').value;
   if (search !== '') {
@@ -55,8 +33,8 @@ function getInfo() {
   }
 }
 
+//esta función recorre results y por cada resultado que coincida con la búsqueda de la usuaria nos crea un elemento <li> que recoge la propiedad name y la propiedad gender.
 function paintData() {
-  console.log('entro en pintar');
   for (let j = 0; j < results.length; j++) {
     let liElement = `<li>Name: <span class="ligthText">${results[j].name}</span> Gender: <span class="ligthText">${results[j].gender}</span></li>`;
     list.innerHTML += liElement;
@@ -70,11 +48,27 @@ function paintData() {
   localStorage.setItem('search', stringData);
 }
 
-btn.addEventListener('click', handler);
+//la función local storage busca en el almacenamiento (que, si no es la primera vez que entra, estará lleno) y guarda en la variable global savedSearch lo que hubiésemos guardado.
+function getLocalStorage() {
+  const stringInfo = localStorage.getItem('search');
+  savedSearch = JSON.parse(stringInfo);
+  if (savedSearch !== null) {
+    getInfoFromLocal();
+    return true;
+  } else {
+    return false;
+  }
+}
 
-// for (let i = 0; i < savedSearch.length; i++) {
-//   if (characterInfo.include(search)) {
-//     let liElement = `<li>Name: <span class="ligthText">${info[i].name}</span> Gender: <span class="ligthText">${info[i].gender}</span></li>`;
-//     list.innerHTML += liElement;
-//   } else {
-//     searchInfo();
+function getInfoFromLocal() {
+  for (let i = 0; i < savedSearch.length; i++) {
+    if (savedSearch[i].name.includes(search)) {
+      let liElement = `<li>Name: <span class="ligthText">${savedSearch[i].name}</span> Gender: <span class="ligthText">${savedSearch[i].gender}</span></li>`;
+      list.innerHTML += liElement;
+    } else {
+      getInfo();
+    }
+  }
+}
+
+btn.addEventListener('click', handler);
