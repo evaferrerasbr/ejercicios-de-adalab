@@ -5,9 +5,9 @@ const list = document.querySelector('.js-list');
 const characterInfo = [];
 let savedSearch = [];
 let search = '';
-let results = undefined;
+let results = '';
 
-//esta función es la que se activa cuando la usuaria hace click en Buscar tras meter el término de búsqueda; llama a la función getLocalStorage() y, en caso de que su return sea false, llama a la función getInfo();
+//esta función es la que se activa cuando la usuaria hace click en Buscar tras meter el término de búsqueda; si el término de búsqueda no está vacío llama a la función getLocalStorage() para consultar el local storage. En caso de esté vacío llama a la función getInfo() para buscar con el fetch, y si está lleno llama a getInfoFromLocal();
 function handler() {
   console.log('entro en el handler porque hago clic');
   search = document.querySelector('.js-input').value;
@@ -19,7 +19,7 @@ function handler() {
       console.log('entro aquí porque no hay nada en el local storage');
       getInfo();
     } else {
-      list.innerHTML = '';
+      getInfoFromLocal();
     }
   }
 }
@@ -56,14 +56,15 @@ function getLocalStorage() {
   const stringInfo = localStorage.getItem('search');
   savedSearch = JSON.parse(stringInfo);
   if (savedSearch !== null) {
-    getInfoFromLocal();
     return true;
   } else {
     return false;
   }
 }
 
-//esta función pregunta si el local storage contiene el término de búsqueda (aunque falta perfilarlo para que no tenga case sensitivity). Falta que me pinte los elementos en pantalla, ya que entra por el if (imprime en pantalla el console.log de dentro) pero no pinta nada en la lista. Cuando está en el debugger sí lo pinta. También falta darle bien una orden alternativa al if para que se vaya a buscar la información al fetch si no está lo que queremos. Por ahora he intentado invocar a getInfo() y no funciona porque me multiplica la información del localstorage.
+let marker = false;
+
+//esta función pregunta si el local storage contiene el término de búsqueda (aunque falta perfilarlo para que no tenga case sensitivity). Gracias a la variable marker podemos preguntar si ha encontrado el término de búsqueda en los resultados del local storage. En caso de no haberlos encontrado, llamamos a la función que hace la petición al servidor.
 function getInfoFromLocal() {
   console.log('el local storage no está vacío');
   for (let i = 0; i < savedSearch.length; i++) {
@@ -72,10 +73,14 @@ function getInfoFromLocal() {
     console.log(search);
     console.log(character.includes(search));
     if (character.includes(search)) {
+      marker = true;
       console.log('entiendo la orden');
       let liElement = `<li>Name: <span class="ligthText">${savedSearch[i].name}</span> Gender: <span class="ligthText">${savedSearch[i].gender}</span></li>`;
       list.innerHTML += liElement;
     }
+  }
+  if (!marker) {
+    getInfo();
   }
 }
 
