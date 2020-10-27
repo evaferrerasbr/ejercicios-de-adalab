@@ -25,6 +25,7 @@ function selectOption(event) {
     themes.dark = true;
   }
   changeTheme();
+  setLocalStorage();
 }
 
 function changeTheme() {
