@@ -11,13 +11,16 @@ let themes = {
 let savedTheme;
 
 function selectOption(event) {
+  console.log('estoy entrando');
   body.classList.remove('theme-1');
   body.classList.remove('theme-2');
   if (event.target.value === 'theme-1') {
+    console.log(event.target.value);
     themes.light = true;
     themes.dark = false;
   }
-  if (event.target === 'theme-2') {
+  if (event.target.value === 'theme-2') {
+    console.log(event.target.value);
     themes.light = false;
     themes.dark = true;
   }
@@ -44,6 +47,9 @@ function getLocalStorage() {
   if (savedTheme !== null) {
     themes = savedTheme;
     changeTheme();
+  } else {
+    themes.light = false;
+    themes.dark = false;
   }
 }
 
