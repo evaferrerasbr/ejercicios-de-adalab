@@ -1,0 +1,45 @@
+.App {
+  background-color: #f1f1f1;
+  width: 400px;
+  padding: 30px;
+}
+
+.App-card {
+  background-color: white;
+  padding: 20px;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-wrapper {
+  font-size: 10px;
+  text-align: left;
+  padding-top: 12px;
+}
+
+.App-logo {
+  padding: 20px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+.App-moreinfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.App-link {
+  color: grey;
+  text-decoration: none;
+}
+
+.App-heart {
+  color: palevioletred;
+}
