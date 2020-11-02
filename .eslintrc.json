@@ -9,7 +9,7 @@
     "indent": [2, 2],
     "quotes": [
       2,
-      "single",
+      "doble",
       { "avoidEscape": true, "allowTemplateLiterals": true }
     ],
     "semi": [2, "always"],
