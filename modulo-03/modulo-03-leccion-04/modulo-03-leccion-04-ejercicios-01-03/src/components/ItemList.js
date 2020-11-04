@@ -23,6 +23,12 @@ const arrayOfItems = [
     category: 'Bebida',
     price: 5,
   },
+  {
+    name: 'Bebida de soja',
+    quantity: 1,
+    category: 'Bebida',
+    price: 8,
+  },
 ];
 
 const filteredArray = arrayOfItems.filter((arrayItem) => arrayItem.price < 10);
