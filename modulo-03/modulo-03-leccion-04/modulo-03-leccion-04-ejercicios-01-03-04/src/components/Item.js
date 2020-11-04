@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../stylesheets/App.scss';
 
 class Item extends React.Component {
@@ -16,6 +17,11 @@ class Item extends React.Component {
     );
   }
 }
+
+Item.propTypes = {
+  name: PropTypes.any.isRequired,
+  // price: PropTypes.number.isRequired,
+};
 
 Item.defaultProps = {
   description: 'No hay descripción',

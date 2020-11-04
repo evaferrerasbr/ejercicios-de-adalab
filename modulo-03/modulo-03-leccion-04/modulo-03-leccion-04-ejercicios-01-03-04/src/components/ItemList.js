@@ -29,6 +29,10 @@ const arrayOfItems = [
     category: 'Bebida',
     price: 8,
   },
+  {
+    quantity: 1,
+    category: 'Bebida',
+  },
 ];
 
 const filteredArray = arrayOfItems.filter((arrayItem) => arrayItem.price < 10);
