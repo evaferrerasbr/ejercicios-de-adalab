@@ -1,17 +1,28 @@
 import React from 'react';
-import Header from './Header';
-import Main from './Main';
-import logo from '../images/mabelpines.jpg';
-
-const text =
-  'Lorem fistrum no te digo trigo por no llamarte Rodrigor a gramenawer ese que llega de la pradera. De la pradera a wan a gramenawer diodeno ese que llega. Ese hombree fistro al ataquerl pupita jarl al ataquerl. Pecador a gramenawer torpedo tiene musho peligro apetecan ese hombree va usté muy cargadoo. No puedor sexuarl mamaar me cago en tus muelas a peich la caidita. Te voy a borrar el cerito pupita mamaar va usté muy cargadoo papaar papaar.';
 
 class Mediacard extends React.Component {
   render() {
     return (
       <div className="App-card">
-        <Header image={logo} name={this.props.name} date={this.props.date} />
-        <Main description={text} likes={this.props.likes} />
+        <header className="App-header">
+          <img src={this.props.image} className="App-logo" alt="logo" />
+          <div className="App-wrapper">
+            <h1 className="App-title">{this.props.name}</h1>
+            <h2 className="App-subtitle">{this.props.date}</h2>
+          </div>
+        </header>
+        <main className="App-section">
+          <p className="App-paragraph">{this.props.description}</p>
+          <div className="App-moreinfo">
+            <a className="App-link" href="/" target="_blank">
+              Leer más...
+            </a>
+            <div className="App-likes">
+              <span>{this.props.likes}</span>
+              <i class="App-heart fa fa-heart" aria-hidden="true"></i>
+            </div>
+          </div>
+        </main>
       </div>
     );
   }
