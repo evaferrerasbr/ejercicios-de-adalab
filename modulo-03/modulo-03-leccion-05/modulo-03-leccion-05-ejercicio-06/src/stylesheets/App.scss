@@ -1,0 +1,20 @@
+.App {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.textarea {
+  padding: 15px;
+  border-radius: 5px;
+  width: 300px;
+  height: 70px;
+  border-style: none;
+  border: 1px solid black;
+}
+
+.text {
+  align-self: flex-start;
+}
