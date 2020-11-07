@@ -1,11 +1,19 @@
 import '../stylesheets/App.scss';
-import Popup from './Popup';
+import HalfPage from './HalfPage';
 
 function App() {
   return (
-    <div className="App">
-      <Popup />
-    </div>
+    <>
+      <h1>Hola mundo</h1>
+      <div className="App">
+        <HalfPage className="left">
+          <div>Izquierda</div>
+        </HalfPage>
+        <HalfPage className="right">
+          <div>Derecha</div>
+        </HalfPage>
+      </div>
+    </>
   );
 }
 
