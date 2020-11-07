@@ -30,22 +30,24 @@ const arrayOfItems = [
     price: 8,
   },
   {
+    name: 'Barra de chocolate',
     quantity: 1,
-    category: 'Bebida',
+    category: 'Fast-food',
+    price: 2,
   },
 ];
 
 const filteredArray = arrayOfItems.filter((arrayItem) => arrayItem.price < 10);
 
-const arrayForRender = filteredArray.map((arrayOfItems) => {
+const arrayForRender = filteredArray.map((arrayItem) => {
   return (
     <li>
       <Item
-        name={arrayOfItems.name}
-        description={arrayOfItems.description}
-        quantity={arrayOfItems.quantity}
-        category={arrayOfItems.category}
-        price={arrayOfItems.price}
+        name={arrayItem.name}
+        description={arrayItem.description}
+        quantity={arrayItem.quantity}
+        category={arrayItem.category}
+        price={arrayItem.price}
       />
     </li>
   );

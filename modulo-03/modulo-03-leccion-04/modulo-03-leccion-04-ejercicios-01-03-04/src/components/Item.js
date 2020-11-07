@@ -19,8 +19,8 @@ class Item extends React.Component {
 }
 
 Item.propTypes = {
-  name: PropTypes.any.isRequired,
-  // price: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 Item.defaultProps = {
