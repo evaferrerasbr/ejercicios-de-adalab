@@ -1,6 +1,17 @@
 import React from 'react';
 
+let heartIcon;
+
 class Mediacard extends React.Component {
+  changeHeart() {
+    if (this.props.heart) {
+      heartIcon = 'fa fa-heart ';
+    } else {
+      heartIcon = 'fa fa-heart-o ';
+    }
+    return heartIcon;
+  }
+
   render() {
     return (
       <div className="App-card">
@@ -19,7 +30,10 @@ class Mediacard extends React.Component {
             </a>
             <div className="App-likes">
               <span>{this.props.likes}</span>
-              <i class="App-heart fa fa-heart" aria-hidden="true"></i>
+              <i
+                className={this.changeHeart() + 'App-heart'}
+                aria-hidden="true"
+              ></i>
             </div>
           </div>
         </main>
