@@ -5,25 +5,28 @@ class OnionHater extends React.Component {
   constructor(props) {
     super(props);
     this.isHating = false;
+    this.compClass = '';
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    const container = document.querySelector('.App');
     if (event.currentTarget.value.toLowerCase().includes('cebolla')) {
       this.isHating = true;
-      container.classList.add('red');
+      this.compClass = 'red';
     } else {
       this.isHating = false;
-      container.classList.remove('red');
+      this.compClass = '';
     }
     this.forceUpdate();
   }
 
   render() {
     return (
-      <div className="App">
-        <textarea onChange={this.handleChange}></textarea>
+      <div className="OnionComponent">
+        <textarea
+          className={this.compClass}
+          onChange={this.handleChange}
+        ></textarea>
       </div>
     );
   }

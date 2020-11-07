@@ -4,7 +4,7 @@ import OnionHater from './OnionHater';
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <OnionHater />
       </div>
     );
