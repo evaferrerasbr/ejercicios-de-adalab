@@ -4,6 +4,8 @@ import '../stylesheets/App.scss';
 class SheepCounter extends React.Component {
   constructor(props) {
     super(props);
+    this.sheepArray = [];
+    this.html = '';
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       counter: 0,
@@ -11,12 +13,27 @@ class SheepCounter extends React.Component {
   }
 
   handleClick() {
+    this.sheepArray.push(this.state.counter);
+    console.log(this.sheepArray);
     this.setState((prevState) => {
       return {
         counter: prevState.counter + 1,
       };
     });
     this.props.getCounter(this.state.counter);
+  }
+
+  renderImg() {
+    const arrayForRender = this.sheepArray.map((arrayItem) => {
+      return (
+        <img
+          className="img"
+          src="http://www.clker.com/cliparts/e/4/8/7/13280460782141411990Cartoon%20Sheep.svg.hi.png"
+          alt="ovejita"
+        />
+      );
+    });
+    return arrayForRender;
   }
 
   render() {
@@ -26,6 +43,7 @@ class SheepCounter extends React.Component {
         <button className="btn" onClick={this.handleClick}>
           Contador
         </button>
+        {this.renderImg()}
       </>
     );
   }
