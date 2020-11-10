@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   getCounter(param) {
-    this.image = param + 1;
+    this.image = param;
   }
 
   render() {

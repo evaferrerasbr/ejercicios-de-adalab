@@ -14,7 +14,6 @@ class SheepCounter extends React.Component {
 
   handleClick() {
     this.sheepArray.push(this.state.counter);
-    console.log(this.sheepArray);
     this.setState((prevState) => {
       return {
         counter: prevState.counter + 1,
