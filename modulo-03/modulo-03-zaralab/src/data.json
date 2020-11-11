@@ -1,0 +1,8 @@
+{
+  "products": [
+    { "name": "Camiseta", "price": 39 },
+    { "name": "Pantalón", "price": 59 },
+    { "name": "Botas", "price": 89 },
+    { "name": "Mantita suave", "price": 14 }
+  ]
+}
