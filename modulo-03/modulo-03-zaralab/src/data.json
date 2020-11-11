@@ -1,8 +1,24 @@
 {
   "products": [
-    { "name": "Camiseta", "price": 39 },
-    { "name": "Pantalón", "price": 59 },
-    { "name": "Botas", "price": 89 },
-    { "name": "Mantita suave", "price": 14 }
+    {
+      "name": "Camiseta",
+      "price": 39,
+      "image": "./images/tshirt-simple-by_vexels.png"
+    },
+    {
+      "name": "Pantalón",
+      "price": 59,
+      "image": "./images/pants-simple-by_vexels.png"
+    },
+    {
+      "name": "Botas",
+      "price": 89,
+      "image": "./images/arctic-boots-illustration-by-Vexels.png"
+    },
+    {
+      "name": "Mantita suave",
+      "price": 14,
+      "image": "./images/winter-blankets-flat-by-Vexels.png"
+    }
   ]
 }

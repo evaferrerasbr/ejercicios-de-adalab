@@ -1,8 +1,6 @@
 import React from 'react';
 import Data from '../data.json';
 
-console.log(Data);
-
 class ItemList extends React.Component {
   constructor(props) {
     super(props);
