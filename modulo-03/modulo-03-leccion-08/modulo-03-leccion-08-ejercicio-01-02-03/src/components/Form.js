@@ -2,7 +2,6 @@ import '../stylesheets/Form.scss';
 
 function Form(props) {
   function handleChange(ev) {
-    console.log(ev.currentTarget.name, ev.currentTarget.value);
     const input = ev.currentTarget.name;
     const value = ev.currentTarget.value;
     props.handleChange(input, value);
@@ -64,9 +63,10 @@ function Form(props) {
             <input
               id="all"
               type="radio"
-              value={props.ages}
+              value="all"
               name="ages"
               onChange={handleChange}
+              checked={props.ages === 'all' ? true : false}
             />
             Para todos los públicos
           </label>
@@ -76,9 +76,10 @@ function Form(props) {
             <input
               id="12"
               type="radio"
-              value={props.ages}
+              value="12"
               name="ages"
               onChange={handleChange}
+              checked={props.ages === '12' ? true : false}
             />
             12
           </label>
@@ -88,9 +89,10 @@ function Form(props) {
             <input
               id="+18"
               type="radio"
-              value={props.ages}
+              value="+18"
               name="ages"
               onChange={handleChange}
+              checked={props.ages === '+18' ? true : false}
             />
             18
           </label>
