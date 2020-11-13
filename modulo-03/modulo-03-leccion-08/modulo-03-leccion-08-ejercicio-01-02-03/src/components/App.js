@@ -20,11 +20,14 @@ function App() {
     } else if (input === 'ages') {
       setAges(value);
     } else if (input === 'gen') {
-      if (gen.includes(value)) {
-        const index = gen.findIndex((genItem) => genItem === value);
-        gen.splice(index);
-      } else {
+      if (!gen.includes(value)) {
         setGen([...gen, value]);
+      } else {
+        const index = gen.indexOf(value);
+        if (index !== -1) {
+          gen.splice(index, 1);
+          setGen([...gen]);
+        }
       }
     }
   }

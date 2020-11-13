@@ -2,7 +2,6 @@ import '../stylesheets/Form.scss';
 
 function Form(props) {
   function handleChange(ev) {
-    console.log(ev.currentTarget.value, ev.currentTarget.name);
     const input = ev.currentTarget.name;
     const value = ev.currentTarget.value;
     props.handleChange(input, value);
@@ -107,7 +106,7 @@ function Form(props) {
               value="Familia"
               name="gen"
               onChange={handleChange}
-              selected={props.gen === 'familia' ? true : false}
+              selected={props.gen === 'Familia' ? true : false}
             />
             Familia
           </label>
@@ -120,7 +119,7 @@ function Form(props) {
               value="Comedia"
               name="gen"
               onChange={handleChange}
-              selected={props.gen === 'comedia' ? true : false}
+              selected={props.gen === 'Comedia' ? true : false}
             />
             Comedia
           </label>
@@ -133,7 +132,7 @@ function Form(props) {
               value="Drama"
               name="gen"
               onChange={handleChange}
-              selected={props.gen === 'drama' ? true : false}
+              selected={props.gen === 'Drama' ? true : false}
             />
             Drama
           </label>
@@ -146,7 +145,7 @@ function Form(props) {
               value="Fantasía"
               name="gen"
               onChange={handleChange}
-              selected={props.gen === 'fantasia' ? true : false}
+              selected={props.gen === 'Fantasía' ? true : false}
             />
             Fantasía
           </label>
