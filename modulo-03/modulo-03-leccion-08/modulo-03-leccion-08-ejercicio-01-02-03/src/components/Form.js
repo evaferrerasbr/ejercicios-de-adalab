@@ -2,6 +2,7 @@ import '../stylesheets/Form.scss';
 
 function Form(props) {
   function handleChange(ev) {
+    console.log(ev.currentTarget.value, ev.currentTarget.name);
     const input = ev.currentTarget.name;
     const value = ev.currentTarget.value;
     props.handleChange(input, value);
@@ -95,6 +96,59 @@ function Form(props) {
               checked={props.ages === '+18' ? true : false}
             />
             18
+          </label>
+        </div>
+        <div>
+          <p>Género</p>
+          <label htmlFor="familia">
+            <input
+              id="familia"
+              type="checkbox"
+              value="Familia"
+              name="gen"
+              onChange={handleChange}
+              selected={props.gen === 'familia' ? true : false}
+            />
+            Familia
+          </label>
+        </div>
+        <div>
+          <label htmlFor="comedia">
+            <input
+              id="comedia"
+              type="checkbox"
+              value="Comedia"
+              name="gen"
+              onChange={handleChange}
+              selected={props.gen === 'comedia' ? true : false}
+            />
+            Comedia
+          </label>
+        </div>
+        <div>
+          <label htmlFor="drama">
+            <input
+              id="drama"
+              type="checkbox"
+              value="Drama"
+              name="gen"
+              onChange={handleChange}
+              selected={props.gen === 'drama' ? true : false}
+            />
+            Drama
+          </label>
+        </div>
+        <div>
+          <label htmlFor="fantasia">
+            <input
+              id="fantasia"
+              type="checkbox"
+              value="Fantasía"
+              name="gen"
+              onChange={handleChange}
+              selected={props.gen === 'fantasia' ? true : false}
+            />
+            Fantasía
           </label>
         </div>
       </form>

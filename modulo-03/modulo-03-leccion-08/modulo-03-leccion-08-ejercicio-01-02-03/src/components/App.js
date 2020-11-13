@@ -8,6 +8,7 @@ function App() {
   const [description, setDescription] = useState('');
   const [lang, setLang] = useState('');
   const [ages, setAges] = useState('');
+  const [gen, setGen] = useState([]);
 
   function handleChange(input, value) {
     if (input === 'name') {
@@ -18,6 +19,8 @@ function App() {
       setLang(value);
     } else if (input === 'ages') {
       setAges(value);
+    } else if (input === 'gen') {
+      setGen(...gen, value);
     }
   }
 
