@@ -7,6 +7,7 @@ function Card(props) {
       <p>{props.description}</p>
       <p>{props.lang}</p>
       <p>{props.ages}</p>
+      <p>{props.gen}</p>
     </div>
   );
 }

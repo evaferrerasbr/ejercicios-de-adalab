@@ -20,7 +20,12 @@ function App() {
     } else if (input === 'ages') {
       setAges(value);
     } else if (input === 'gen') {
-      setGen(...gen, value);
+      if (gen.includes(value)) {
+        const index = gen.findIndex((genItem) => genItem === value);
+        gen.splice(index);
+      } else {
+        setGen([...gen, value]);
+      }
     }
   }
 
@@ -33,7 +38,13 @@ function App() {
         ages={ages}
         handleChange={handleChange}
       />
-      <Card name={name} description={description} lang={lang} ages={ages} />
+      <Card
+        name={name}
+        description={description}
+        lang={lang}
+        ages={ages}
+        gen={gen}
+      />
     </div>
   );
 }
