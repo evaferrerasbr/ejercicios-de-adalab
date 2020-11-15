@@ -8,7 +8,7 @@ function Card(props) {
       <p>{props.lang}</p>
       <p>{props.ages}</p>
       <p>{props.gen}</p>
-      <image src={props.image} />
+      <img src={props.image} className="Card__preview" alt="movie preview" />
     </div>
   );
 }

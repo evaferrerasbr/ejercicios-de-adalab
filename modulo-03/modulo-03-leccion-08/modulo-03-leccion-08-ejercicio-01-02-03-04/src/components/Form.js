@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../stylesheets/Form.scss';
 
 let fr = new FileReader();
 
 function Form(props) {
-  const [url, setUrl] = useState('');
-
   const fileInput = React.createRef();
 
   function handleChange(ev) {
@@ -14,15 +12,15 @@ function Form(props) {
     props.handleChange(input, value);
   }
 
-  function writeImage(myFile) {
-    // const rawUrl = fr.result;
-    // setUrl(rawUrl);
+  function handleFile() {
+    const myFile = fileInput.current.files[0];
+    fr.addEventListener('load', writeImage);
+    fr.readAsDataURL(myFile);
   }
 
-  function handleFile(ev) {
-    const myFile = ev.currentTarget.files[0];
-    console.log(fr.readAsDataURL(myFile));
-    fr.addEventListener('load', writeImage(myFile));
+  function writeImage() {
+    const rawUrl = fr.result;
+    props.handleFile(rawUrl);
   }
 
   return (

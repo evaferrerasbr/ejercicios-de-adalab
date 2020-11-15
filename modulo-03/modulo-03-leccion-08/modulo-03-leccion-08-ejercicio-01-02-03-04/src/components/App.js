@@ -33,11 +33,9 @@ function App() {
     }
   }
 
-  function handleFile(fr, url, fileName) {
-    if (url) {
-      setPreview(fr.readAsDataURL(url));
-    } else {
-      setPreview('');
+  function handleFile(file) {
+    if (file !== '') {
+      setPreview(file);
     }
   }
 
