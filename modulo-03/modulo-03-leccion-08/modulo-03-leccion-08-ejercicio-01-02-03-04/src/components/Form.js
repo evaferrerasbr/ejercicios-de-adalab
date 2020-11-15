@@ -1,10 +1,28 @@
+import React, { useState } from 'react';
 import '../stylesheets/Form.scss';
 
+let fr = new FileReader();
+
 function Form(props) {
+  const [url, setUrl] = useState('');
+
+  const fileInput = React.createRef();
+
   function handleChange(ev) {
     const input = ev.currentTarget.name;
     const value = ev.currentTarget.value;
     props.handleChange(input, value);
+  }
+
+  function writeImage(myFile) {
+    // const rawUrl = fr.result;
+    // setUrl(rawUrl);
+  }
+
+  function handleFile(ev) {
+    const myFile = ev.currentTarget.files[0];
+    console.log(fr.readAsDataURL(myFile));
+    fr.addEventListener('load', writeImage(myFile));
   }
 
   return (
@@ -150,6 +168,7 @@ function Form(props) {
             Fantasía
           </label>
         </div>
+        <input type="file" name="file" onChange={handleFile} ref={fileInput} />
       </form>
     </div>
   );

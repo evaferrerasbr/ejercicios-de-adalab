@@ -9,6 +9,7 @@ function App() {
   const [lang, setLang] = useState('');
   const [ages, setAges] = useState('');
   const [gen, setGen] = useState([]);
+  const [preview, setPreview] = useState('');
 
   function handleChange(input, value) {
     if (input === 'name') {
@@ -32,6 +33,14 @@ function App() {
     }
   }
 
+  function handleFile(fr, url, fileName) {
+    if (url) {
+      setPreview(fr.readAsDataURL(url));
+    } else {
+      setPreview('');
+    }
+  }
+
   return (
     <div className="App">
       <Form
@@ -40,6 +49,7 @@ function App() {
         lang={lang}
         ages={ages}
         handleChange={handleChange}
+        handleFile={handleFile}
       />
       <Card
         name={name}
@@ -47,6 +57,7 @@ function App() {
         lang={lang}
         ages={ages}
         gen={gen}
+        image={preview}
       />
     </div>
   );
