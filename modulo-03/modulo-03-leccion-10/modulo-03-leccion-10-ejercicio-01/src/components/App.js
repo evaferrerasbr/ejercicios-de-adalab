@@ -1,5 +1,9 @@
 import React from 'react';
 import { fetchSearch } from '../components/services/SearchService';
+import Header from './Header';
+import Filters from './Filters';
+import UserList from './UserList';
+import ProfilesData from '../data/profilesData.json';
 import '../stylesheets/App.scss';
 
 class App extends React.Component {
@@ -20,7 +24,17 @@ class App extends React.Component {
   }
 
   render() {
-    return <div className="App"></div>;
+    const handleFilter = () => {};
+
+    return (
+      <div className="App">
+        <Header number="3.10" lesson="Arquitectura" title="LinkedIn" />
+        <main className="container">
+          <Filters handleFilter={handleFilter} />
+          <UserList list={ProfilesData} />
+        </main>
+      </div>
+    );
   }
 }
 
