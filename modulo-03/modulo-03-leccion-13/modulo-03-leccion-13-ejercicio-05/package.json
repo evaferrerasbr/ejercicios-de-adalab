@@ -1,0 +1,14 @@
+{
+  "name": "modulo-03-leccion-13-ejercicio-01-02",
+  "version": "1.0.0",
+  "description": "intro testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
