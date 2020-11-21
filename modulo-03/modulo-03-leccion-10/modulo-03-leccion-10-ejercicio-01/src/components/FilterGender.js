@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 
-const FilterGender = () => {
-  const handleChange = (ev) => {};
+const FilterGender = (props) => {
+  const handleChange = (ev) => {
+    const data = {
+      name: ev.currentTarget.name,
+      value: ev.currentTarget.value,
+    };
+    props.handleFilter(data);
+  };
 
   return (
     <>
@@ -15,10 +21,10 @@ const FilterGender = () => {
         id="gender"
         onChange={handleChange}
       >
-        <option value="all">Todos</option>
-        <option value="female">Mujer</option>
-        <option value="male">Hombre</option>
-        <option value="no-binary">No binario</option>
+        <option value="all">All</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="no-binary">No-binary</option>
       </select>
     </>
   );

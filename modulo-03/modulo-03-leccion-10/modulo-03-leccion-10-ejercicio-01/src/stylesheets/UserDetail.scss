@@ -1,0 +1,41 @@
+.background {
+  position: fixed;
+  z-index: 998;
+  background-color: #00007777;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__window {
+  z-index: 999;
+  width: 40vw;
+  min-height: 30vh;
+  max-width: 80vh;
+  border: 5px cyan solid;
+  border-radius: 20px;
+  background: white;
+  padding: 20px;
+  .modal__title {
+    color: cyan;
+  }
+}
+
+.modal__close {
+  top: -100px;
+  left: 560px;
+  position: relative;
+  border: 5px cyan solid;
+  border-radius: 30px;
+  background: #1c1c1c;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

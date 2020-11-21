@@ -1,45 +1,86 @@
-import React from 'react';
-import api from '../services/api';
+import { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { getDataFromApi } from '../services/api';
 import Filters from './Filters';
 import UserList from './UserList';
+import UserDetail from './UserDetail';
 import '../stylesheets/App.scss';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.serverCall = this.serverCall.bind(this);
-    this.state = {
-      usersData: [],
-    };
-  }
+const App = () => {
+  //state
+  const [users, setUsers] = useState([]);
+  const [nameFilter, setNameFilter] = useState('');
+  const [genderFilter, setGenderFilter] = useState('all');
+  const [citiesFilter, setCitiesFilter] = useState([]);
 
-  //API
-  //this function contains the call to server and will be called in componentDidMount()
-  serverCall() {
-    api.getDataFromApi().then((data) => {
-      this.setState({
-        usersData: data,
-      });
+  //api
+  useEffect(() => {
+    getDataFromApi().then((data) => setUsers(data));
+  }, []);
+
+  //handler
+  const handleFilter = (data) => {
+    const { name, value, checked } = data;
+    if (name === 'name') {
+      setNameFilter(value);
+    } else if (name === 'gender') {
+      setGenderFilter(value);
+    } else if (name === 'location') {
+      if (checked === true) {
+        const newCitiesFilter = [...citiesFilter, value];
+        setCitiesFilter(newCitiesFilter);
+      } else {
+        const newCitiesFilter = citiesFilter.filter((city) => {
+          return city !== value;
+        });
+        setCitiesFilter(newCitiesFilter);
+      }
+    }
+  };
+
+  //filters
+  const filteredUsers = users
+    .filter((user) => {
+      return user.name.toLowerCase().includes(nameFilter.toLowerCase());
+    })
+    .filter((user) => {
+      return genderFilter === 'all' || user.gender === genderFilter;
+    })
+    .filter((user) => {
+      return citiesFilter.length === 0 || citiesFilter.includes(user.city);
     });
-  }
 
-  componentDidMount() {
-    this.serverCall();
-  }
+  //render
+  const renderCities = () => {
+    return users.map((user) => user.city);
+  };
 
-  //RENDER
-  render() {
-    const handleFilter = () => {};
+  const renderUserDetails = (props) => {
+    const userId = props.match.params.userId;
+    const foundUser = users.find((user) => {
+      return user.id === userId;
+    });
+    if (foundUser !== undefined) {
+      return <UserDetail user={foundUser} />;
+    }
+  };
 
-    return (
-      <div className="App">
-        <main className="container">
-          <Filters handleFilter={handleFilter} />
-          <UserList list={this.state.usersData} />
-        </main>
-      </div>
-    );
-  }
-}
+  //jsx
+  return (
+    <div className="App">
+      <main className="container">
+        <Filters
+          handleFilter={handleFilter}
+          cities={renderCities()}
+          value={nameFilter}
+        />
+        <UserList list={filteredUsers} />
+        <Switch>
+          <Route path="/user/:userId" render={renderUserDetails} />
+        </Switch>
+      </main>
+    </div>
+  );
+};
 
 export default App;
