@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import FilterGender from './FilterGender';
 import FilterLocation from './FilterLocation';
 import FilterName from './FilterName';
-import './Filters.scss';
 
 const Filters = (props) => (
   <section className="filters">

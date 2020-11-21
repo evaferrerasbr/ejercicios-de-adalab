@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
 import UserItem from './UserItem';
-import './UserList.scss';
 
 const UserList = (props) => {
+  const usersList = props.list.map((user) => {
+    return (
+      <li key={user.login.uuid}>
+        <UserItem
+          picture={user.picture.medium}
+          name={user.name.first + user.name.last}
+          city={user.location.city}
+        />
+      </li>
+    );
+  });
+
   return (
     <section className="users">
-      <ul className="users__list">
-        {props.list.map((userData) => (
-          <li className="users__list-item" key={userData.id}>
-            <UserItem user={userData} />
-          </li>
-        ))}
-      </ul>
+      <ul>{usersList}</ul>
     </section>
   );
 };

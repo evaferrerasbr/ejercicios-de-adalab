@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
 const UserItem = (props) => {
-  const { name, city, image, gender: originalGender } = props.user;
+  // const { name, city, image, gender: originalGender } = props.user;
 
-  const gender = originalGender;
+  // const gender = originalGender;
 
   return (
     <article className="users__card">
-      <div className="users__card--imgContainer">
+      {/* <div className="users__card--imgContainer">
         <img
           className="users__card--img"
           src={image}
@@ -18,7 +18,7 @@ const UserItem = (props) => {
       <h4 className="users__card--title">{name}</h4>
       <p className="users__card--description">
         {city} / {gender}
-      </p>
+      </p> */}
     </article>
   );
 };
