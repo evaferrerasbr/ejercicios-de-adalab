@@ -1,0 +1,22 @@
+{
+  "name": "gilded-rose-js-with-tests",
+  "version": "1.0.0",
+  "description": "Gilded Rose kata with tests in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gootyfer/gilded-rose-js-with-tests.git"
+  },
+  "author": "Asociación Adalab",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gootyfer/gilded-rose-js-with-tests/issues"
+  },
+  "homepage": "https://github.com/gootyfer/gilded-rose-js-with-tests#readme",
+  "devDependencies": {
+    "jest": "^23.0.0"
+  }
+}
