@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getDataFromApi } from '../services/api';
 import Filters from './Filters';
+import MissingElement from './MissingElement';
 import UserList from './UserList';
 import UserDetail from './UserDetail';
 import '../stylesheets/App.scss';
@@ -74,7 +75,11 @@ const App = () => {
           cities={renderCities()}
           value={nameFilter}
         />
-        <UserList list={filteredUsers} />
+        {filteredUsers.length === 0 ? (
+          <MissingElement />
+        ) : (
+          <UserList list={filteredUsers} />
+        )}
         <Switch>
           <Route path="/user/:userId" render={renderUserDetails} />
         </Switch>
